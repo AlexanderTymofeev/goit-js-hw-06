@@ -12,11 +12,16 @@ function submitFunc(event) {
     alert("Пожалуйста, заполните все поля");
   }
 
-const formData = new FormData(event.currentTarget);
-  formData.forEach((value, name) => {
-    console.log(`name: ${name}`);
-    console.log(`value: ${value}`);
-  });
+  const formItems = {
+  email: email.value,
+  password: password.value,
+  };
+  if (email.value && password.value) {
+    console.log(formItems);
+  }
+  if (email.value && password.value) {
+    event.currentTarget.reset();
+  }
   form.reset();
 }
 
